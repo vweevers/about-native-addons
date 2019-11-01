@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict'
 
 const table = require('markdown-table')
@@ -5,9 +6,9 @@ const semver = require('semver')
 const resolve = require('resolve')
 const cp = require('child_process')
 const promisify = require('util').promisify
-const runTests = promisify(require('./lib/run-tests'))
-const testPairs = require('./lib/test-pairs')
-const analyze = require('.')
+const runTests = promisify(require('../lib/run-tests'))
+const testPairs = require('../lib/test-pairs')
+const analyze = require('../old')
 
 ;(async function () {
   const subjects = [
@@ -46,7 +47,7 @@ const analyze = require('.')
     // ['zeromq'], // Tests fail on their own
     // ['zeromq-ng'],
     // ['fuse-bindings'],
-    ['lzo-decompress'],
+    ['lzo-decompress']
     // ['rabin-native'],
     // ['node-levenshtein']
   ]
@@ -121,7 +122,7 @@ const analyze = require('.')
     let sym = 0
     let hasNapi = false
 
-    for (let prebuild of files) {
+    for (const prebuild of files) {
       if (prebuild.platform === 'darwin') {
         sym = Math.max(prebuild.globalSymbols.length, sym)
       }
@@ -136,7 +137,7 @@ const analyze = require('.')
       files.length,
       hasNapi ? 'Yes' : '',
       sym,
-      loadable ? 'OK': 'ERR',
+      loadable ? 'OK' : 'ERR',
       conflicts ? 'Yes' : ''
     ]
   })
@@ -154,16 +155,9 @@ const analyze = require('.')
 
   console.log('## Data\n')
 
-  console.log(table(rows, { align: [
-    'l',
-    'l',
-    'l',
-    'r',
-    'l',
-    'r',
-    'r',
-    'l'
-  ]}))
+  console.log(table(rows, {
+    align: ['l', 'l', 'l', 'r', 'l', 'r', 'r', 'l']
+  }))
 
   console.log('\n## Load test\n')
 

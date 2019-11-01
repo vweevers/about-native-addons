@@ -9,7 +9,6 @@ const ngb4 = require('./lib/node-gyp-build@4')
 const ngb3 = require('./lib/node-gyp-build@3')
 const pi4 = require('./lib/prebuild-install@4')
 const path = require('path')
-const fs = require('fs')
 const cp = require('child_process')
 
 async function analyze (id, options) {
@@ -24,7 +23,7 @@ async function analyze (id, options) {
 
   project.prebuilds = await getPrebuilds(project)
 
-  for (let prebuild of project.prebuilds.files) {
+  for (const prebuild of project.prebuilds.files) {
     prebuild.globalSymbols = getGlobalSymbols(prebuild, options.ignoreSymbol)
 
     if (prebuild.platform === 'win32') {
@@ -58,7 +57,7 @@ async function getPrebuilds (project) {
     return { type: 'node-gyp-build@3', files: ngb3.prebuilds(project.dir) }
   } else if (hasDependency(project.pkg, 'prebuild-install', '>=4')) {
     const dest = path.resolve('cache', project.name, project.version, 'prebuilds')
-    await download(project.dir, dest)
+    await download(project.pkg, dest)
     const files = pi4.prebuilds(project.name, project.version, dest)
     return { type: 'prebuild-install', files }
   } else {
