@@ -87,7 +87,8 @@ process.stdin
           prebuilds.length,
           project.hasNapi() ? 'Yes' : '',
           project.language || '',
-          project.downloadCount
+          project.downloadCount,
+          project.platforms().join('<br>')
         ]
       })
 
@@ -98,7 +99,8 @@ process.stdin
         'Prebuilds',
         'N-API',
         'Lang',
-        'D/L'
+        'D/L',
+        'Platforms'
       ])
 
       console.log('## Data\n')
@@ -110,7 +112,14 @@ process.stdin
 
 function npmLink (name) {
   const url = `https://npmjs.com/package/${name}`
-  const code = '`' + name + '`'
-
+  const code = '`' + shortName(name) + '`'
   return `[${code}](${url})`
+}
+
+function shortName (name) {
+  if (name.length > 20 && name[0] === '@') {
+    return '../' + name.split('/')[1]
+  }
+
+  return name
 }

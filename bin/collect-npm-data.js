@@ -27,12 +27,9 @@ function ondata (pkg, seq) {
   console.error(`${count} (${progress}%) m:${matches} seq:${seq}`)
 
   try {
-    for (const dep of commonDeps) {
-      if (dependsOn(pkg, dep)) {
-        console.log(JSON.stringify(pkg))
-        matches++
-        break
-      }
+    if (maybeNative(pkg)) {
+      console.log(JSON.stringify(pkg))
+      matches++
     }
   } catch (err) {
     console.error(err)
@@ -42,6 +39,20 @@ function ondata (pkg, seq) {
 function done () {
   console.error('done')
   process.exit()
+}
+
+function maybeNative (pkg) {
+  for (const dep of commonDeps) {
+    if (dependsOn(pkg, dep)) {
+      return true
+    }
+  }
+
+  if (pkg.name === 'fsevents') {
+    return true
+  }
+
+  return false
 }
 
 function dependsOn (pkg, dep) {
