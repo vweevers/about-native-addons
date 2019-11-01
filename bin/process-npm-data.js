@@ -55,7 +55,7 @@ process.stdin
 
       project.hydrateDownloadCount((err) => {
         if (err) console.error(project.title, err.message)
-        
+
         if (project.downloadCount < 1000) {
           unpopular++
           return next()

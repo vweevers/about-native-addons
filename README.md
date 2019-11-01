@@ -17,12 +17,12 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 | [`websocket`](https://npmjs.com/package/websocket) | 1.0.30 |  | 0 |  |  | 880560 |
 | [`sqlite3`](https://npmjs.com/package/sqlite3) | 4.1.0 | `node-pre-gyp` | 0 |  |  | 821032 |
 | [`canvas`](https://npmjs.com/package/canvas) | 2.6.0 | `node-pre-gyp` | 0 |  |  | 807247 |
-| [`leveldown`](https://npmjs.com/package/leveldown) | 5.4.1 | `node-gyp-build` | 0 | Yes |  | 448127 |
+| [`leveldown`](https://npmjs.com/package/leveldown) | 5.4.1 | `node-gyp-build@4` | 8 | Yes |  | 448127 |
 | [`unix-dgram`](https://npmjs.com/package/unix-dgram) | 2.0.3 |  | 0 |  |  | 395333 |
 | [`secp256k1`](https://npmjs.com/package/secp256k1) | 3.7.1 |  | 0 |  |  | 375466 |
 | [`snappy`](https://npmjs.com/package/snappy) | 6.2.3 | `prebuild-install` | 44 |  |  | 344638 |
-| [`bufferutil`](https://npmjs.com/package/bufferutil) | 4.0.1 | `node-gyp-build` | 0 |  |  | 340184 |
-| [`utf-8-validate`](https://npmjs.com/package/utf-8-validate) | 5.0.2 | `node-gyp-build` | 0 |  |  | 332895 |
+| [`bufferutil`](https://npmjs.com/package/bufferutil) | 4.0.1 | `node-gyp-build@3` | 8 | Yes |  | 340184 |
+| [`utf-8-validate`](https://npmjs.com/package/utf-8-validate) | 5.0.2 | `node-gyp-build@3` | 8 | Yes |  | 332895 |
 | [`heapdump`](https://npmjs.com/package/heapdump) | 0.3.15 |  | 0 |  |  | 300775 |
 | [`ttf2woff2`](https://npmjs.com/package/ttf2woff2) | 3.0.0 |  | 0 |  |  | 300470 |
 | [`scrypt`](https://npmjs.com/package/scrypt) | 6.0.3 |  | 0 |  |  | 299708 |
@@ -39,7 +39,7 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 | [`pprof`](https://npmjs.com/package/pprof) | 1.2.0 | `node-pre-gyp` | 0 |  |  | 126830 |
 | [`java`](https://npmjs.com/package/java) | 0.11.1 |  | 0 |  |  | 125060 |
 | [`canvas-prebuilt`](https://npmjs.com/package/canvas-prebuilt) | 2.0.0-alpha.14 | `node-pre-gyp` | 0 |  |  | 118586 |
-| [`microtime`](https://npmjs.com/package/microtime) | 3.0.0 | `node-gyp-build` | 0 | Yes |  | 118354 |
+| [`microtime`](https://npmjs.com/package/microtime) | 3.0.0 | `node-gyp-build@3` | 8 | Yes |  | 118354 |
 | [`libpq`](https://npmjs.com/package/libpq) | 1.8.9 |  | 0 |  |  | 115850 |
 | [`sse4_crc32`](https://npmjs.com/package/sse4_crc32) | 6.0.1 |  | 0 | Yes |  | 104425 |
 | [`tiny-secp256k1`](https://npmjs.com/package/tiny-secp256k1) | 1.1.3 |  | 0 |  |  | 103160 |
@@ -95,7 +95,7 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 | [`node-zopfli-es`](https://npmjs.com/package/node-zopfli-es) | 1.0.3 |  | 0 | Yes |  | 28957 |
 | [`pdf-fill-form`](https://npmjs.com/package/pdf-fill-form) | 4.1.0 |  | 0 |  |  | 27187 |
 | [`sq-native`](https://npmjs.com/package/sq-native) | 0.8.0 | `node-pre-gyp` | 0 |  |  | 26929 |
-| [`sodium-native`](https://npmjs.com/package/sodium-native) | 2.4.6 | `node-gyp-build` | 0 |  |  | 26464 |
+| [`sodium-native`](https://npmjs.com/package/sodium-native) | 2.4.6 | `node-gyp-build@4` | 100 |  |  | 26464 |
 | [`abstract-socket`](https://npmjs.com/package/abstract-socket) | 2.1.0 |  | 0 |  |  | 25863 |
 | [`spellchecker`](https://npmjs.com/package/spellchecker) | 3.7.0 |  | 0 |  |  | 25149 |
 | [`gl`](https://npmjs.com/package/gl) | 4.4.0 | `prebuild-install` | 10 |  |  | 24914 |
@@ -131,7 +131,7 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 | [`epoll`](https://npmjs.com/package/epoll) | 3.0.0 |  | 0 |  |  | 13843 |
 | [`eccrypto`](https://npmjs.com/package/eccrypto) | 1.1.2 |  | 0 |  |  | 13765 |
 | [`find-git-repositories`](https://npmjs.com/package/find-git-repositories) | 0.1.1 |  | 0 |  |  | 13545 |
-| [`@puresec/function-shield`](https://npmjs.com/package/@puresec/function-shield) | 2.0.16 | `node-gyp-build` | 0 |  |  | 13482 |
+| [`@puresec/function-shield`](https://npmjs.com/package/@puresec/function-shield) | 2.0.16 | `node-gyp-build@4` | 0 |  |  | 13482 |
 | [`process-list`](https://npmjs.com/package/process-list) | 2.0.0 | `prebuild-install` | 30 |  |  | 13392 |
 | [`pg-query-native`](https://npmjs.com/package/pg-query-native) | 1.2.0 |  | 0 |  |  | 13050 |
 | [`raw-socket`](https://npmjs.com/package/raw-socket) | 1.7.0 |  | 0 |  |  | 13017 |
@@ -199,7 +199,7 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 | [`rabin`](https://npmjs.com/package/rabin) | 2.0.0 | `prebuild-install` | 0 |  |  | 4481 |
 | [`cryptian`](https://npmjs.com/package/cryptian) | 0.0.3 |  | 0 |  |  | 4454 |
 | [`win-mouse`](https://npmjs.com/package/win-mouse) | 1.3.0 |  | 0 |  |  | 4368 |
-| [`utp-native`](https://npmjs.com/package/utp-native) | 2.1.4 | `node-gyp-build` | 0 | Yes |  | 4152 |
+| [`utp-native`](https://npmjs.com/package/utp-native) | 2.1.4 | `node-gyp-build@3` | 12 | Yes |  | 4152 |
 | [`mountutils`](https://npmjs.com/package/mountutils) | 1.3.19 | `prebuild-install` | 0 |  |  | 4118 |
 | [`mongodb-client-encryption`](https://npmjs.com/package/mongodb-client-encryption) | 0.3.1 | `prebuild-install` | 0 |  |  | 4095 |
 | [`heap-profile`](https://npmjs.com/package/heap-profile) | 0.4.0 |  | 0 |  |  | 4028 |
@@ -209,7 +209,7 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 | [`syspipe`](https://npmjs.com/package/syspipe) | 0.1.5 |  | 0 |  |  | 3840 |
 | [`node-libpng`](https://npmjs.com/package/node-libpng) | 0.2.7 |  | 0 |  |  | 3791 |
 | [`windows-focus-assist`](https://npmjs.com/package/windows-focus-assist) | 1.2.0 |  | 0 |  |  | 3770 |
-| [`rocksdb`](https://npmjs.com/package/rocksdb) | 4.1.0 | `node-gyp-build` | 0 | Yes |  | 3724 |
+| [`rocksdb`](https://npmjs.com/package/rocksdb) | 4.1.0 | `node-gyp-build@4` | 3 | Yes |  | 3724 |
 | [`geoip2`](https://npmjs.com/package/geoip2) | 1.0.5 |  | 0 |  |  | 3702 |
 | [`tree-sitter`](https://npmjs.com/package/tree-sitter) | 0.15.13 | `prebuild-install` | 15 |  |  | 3653 |
 | [`nanomsg`](https://npmjs.com/package/nanomsg) | 4.1.0 |  | 0 |  |  | 3600 |
@@ -231,7 +231,7 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 | [`pigpio`](https://npmjs.com/package/pigpio) | 2.0.1 |  | 0 |  |  | 3037 |
 | [`winusb-driver-generator`](https://npmjs.com/package/winusb-driver-generator) | 1.2.4 | `prebuild-install` | 0 |  |  | 3034 |
 | [`git-utils`](https://npmjs.com/package/git-utils) | 5.6.1 |  | 0 |  |  | 3029 |
-| [`fd-lock`](https://npmjs.com/package/fd-lock) | 1.0.2 | `node-gyp-build` | 0 | Yes |  | 2994 |
+| [`fd-lock`](https://npmjs.com/package/fd-lock) | 1.0.2 | `node-gyp-build@3` | 12 | Yes |  | 2994 |
 | [`@mapbox/mapbox-gl-native`](https://npmjs.com/package/@mapbox/mapbox-gl-native) | 5.0.2 | `node-pre-gyp` | 0 |  |  | 2830 |
 | [`talib`](https://npmjs.com/package/talib) | 1.1.3 |  | 0 |  |  | 2829 |
 | [`node-stringprep`](https://npmjs.com/package/node-stringprep) | 0.8.0 |  | 0 |  |  | 2789 |
@@ -287,7 +287,7 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 | [`@atom/watcher`](https://npmjs.com/package/@atom/watcher) | 1.3.1 | `prebuild-install` | 60 |  |  | 1578 |
 | [`pcap`](https://npmjs.com/package/pcap) | 2.1.0 |  | 0 |  |  | 1566 |
 | [`medooze-media-server`](https://npmjs.com/package/medooze-media-server) | 0.80.0 |  | 0 |  |  | 1540 |
-| [`ed25519-supercop`](https://npmjs.com/package/ed25519-supercop) | 1.2.0 | `node-gyp-build` | 0 |  |  | 1535 |
+| [`ed25519-supercop`](https://npmjs.com/package/ed25519-supercop) | 1.2.0 | `node-gyp-build@3` | 75 |  |  | 1535 |
 | [`@screeps/driver`](https://npmjs.com/package/@screeps/driver) | 5.0.0 |  | 0 |  |  | 1526 |
 | [`reconfix`](https://npmjs.com/package/reconfix) | 0.5.2 | `neon` | 0 |  | rust | 1508 |
 | [`giac`](https://npmjs.com/package/giac) | 1.23.69362 |  | 0 |  |  | 1503 |

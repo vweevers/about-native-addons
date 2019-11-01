@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "cross-spawn": "~7.0.1",
+    "get-npm-tarball-url": "~2.0.1",
     "ghreleases": "~3.0.2",
     "global-symbols": "github:vweevers/global-symbols",
     "gunzip-maybe": "~1.4.1",
