@@ -53,23 +53,20 @@ process.stdin
         return next()
       }
 
-      project.hydrateDownloadCount(async (err) => {
-        if (err) return next(err)
-
+      project.hydrateDownloadCount((err) => {
+        if (err) console.error(project.title, err.message)
+        
         if (project.downloadCount < 1000) {
           unpopular++
           return next()
         }
 
-        projects.push(project)
+        project.hydratePrebuilds((err) => {
+          if (err) console.error(project.title, err.message)
 
-        try {
-          await project.hydratePrebuilds()
-        } catch (err) {
-          console.error(project.title, err.message)
-        }
-
-        next()
+          projects.push(project)
+          next()
+        })
       })
     },
     final (callback) {

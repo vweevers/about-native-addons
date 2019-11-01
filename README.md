@@ -284,7 +284,7 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 | [`atom-patch`](https://npmjs.com/package/atom-patch) | 1.0.4 |  | 0 |  |  | 1656 |
 | [`node-protobuf`](https://npmjs.com/package/node-protobuf) | 1.4.3 |  | 0 |  |  | 1637 |
 | [`sd-daemon`](https://npmjs.com/package/sd-daemon) | 1.0.1 |  | 0 | Yes |  | 1621 |
-| [`@atom/watcher`](https://npmjs.com/package/@atom/watcher) | 1.3.1 | `prebuild-install` | 0 |  |  | 1578 |
+| [`@atom/watcher`](https://npmjs.com/package/@atom/watcher) | 1.3.1 | `prebuild-install` | 60 |  |  | 1578 |
 | [`pcap`](https://npmjs.com/package/pcap) | 2.1.0 |  | 0 |  |  | 1566 |
 | [`medooze-media-server`](https://npmjs.com/package/medooze-media-server) | 0.80.0 |  | 0 |  |  | 1540 |
 | [`ed25519-supercop`](https://npmjs.com/package/ed25519-supercop) | 1.2.0 | `node-gyp-build` | 0 |  |  | 1535 |
