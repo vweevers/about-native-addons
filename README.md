@@ -8,7 +8,7 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 
 | Name | Version | Type | Prebuilds | N-API | Lang | D/L |
 | ---- | ------- | ---- | --------- | ----- | ---- | --- |
-| [`node-sass`](https://npmjs.com/package/node-sass) | 4.13.0 |  | 0 |  |  | 17110462 |
+| [`node-sass`](https://npmjs.com/package/node-sass) | 4.13.0 |  | 87 |  |  | 17110462 |
 | [`grpc`](https://npmjs.com/package/grpc) | 1.24.1 | `node-pre-gyp` | 0 |  |  | 4052067 |
 | [`dtrace-provider`](https://npmjs.com/package/dtrace-provider) | 0.8.8 |  | 0 |  |  | 3508815 |
 | [`sharp`](https://npmjs.com/package/sharp) | 0.23.2 | `prebuild-install` | 40 |  |  | 2175840 |
