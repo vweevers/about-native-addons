@@ -26,20 +26,11 @@ const analyze = require('../old')
     ['bufferutil'],
     // ['couchbase'], // Tests require java
     // ['event-loop-delay'],
-    ['farmhash', {
-      // "npm test" fails due to semistandard
-      testCommand: ['node', 'test/unit']
-    }],
+    ['farmhash'],
     ['fd-lock'],
-    ['keytar', {
-      // "npm test" rebuilds every time
-      testCommand: ['npx', 'mocha', '--require', 'babel-core/register', 'spec/']
-    }],
+    ['keytar'],
     ['microtime'],
-    ['sharp', {
-      // "npm test" fails due to semistandard
-      testCommand: ['npm', 'run', 'test-unit']
-    }],
+    ['sharp'],
     ['sodium-native'],
     ['tree-sitter'],
     ['utf-8-validate'],
@@ -172,11 +163,7 @@ const analyze = require('../old')
 
   const testMatrix = await testPairs(projects, async function (a, b) {
     console.error('Test %s with injected %s', a.title, b.title)
-
-    const testCommand = a.options.testCommand
-    const inject = b.dir
-
-    return runTests(a.dir, { testCommand, inject })
+    return runTests(a.pkg, { inject: b.pkg })
   })
 
   console.log(table(testMatrix))
