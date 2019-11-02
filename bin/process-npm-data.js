@@ -4,6 +4,7 @@
 const split2 = require('split2')
 const { Writable } = require('readable-stream')
 const table = require('markdown-table')
+const approx = require('approximate-number')
 const Project = require('../lib/project')
 const commonDeps = require('../lib/common-deps')
 
@@ -83,21 +84,21 @@ process.stdin
         return [
           npmLink(name),
           version,
-          type ? '`' + type + '`' : '',
+          type === 'hand-rolled' ? type : type ? '`' + type + '`' : '',
           prebuilds.length,
           project.hasNapi() ? 'Yes' : '',
           project.language || '',
-          project.downloadCount,
+          approx(project.downloadCount),
           project.platforms().join('<br>')
         ]
       })
 
       rows.unshift([
         'Name',
-        'Version',
+        'Ver.',
         'Type',
-        'Prebuilds',
-        'N-API',
+        'Preb.',
+        'NAPI',
         'Lang',
         'D/L',
         'Platforms'
