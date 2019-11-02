@@ -5,6 +5,8 @@ const split2 = require('split2')
 const { Writable } = require('readable-stream')
 const table = require('markdown-table')
 const approx = require('approximate-number')
+const ghauth = require('ghauth')
+const fs = require('fs')
 const Project = require('../lib/project')
 const commonDeps = require('../lib/common-deps')
 
@@ -38,13 +40,18 @@ let unpopular = 0
 
 const projects = []
 
-process.stdin
-  .pipe(split2(JSON.parse))
-  .pipe(new Writable({
+ghauth({
+  configName: 'about-native-modules',
+  note: 'For about-native-modules',
+  userAgent: 'about-native-modules'
+}, function (err, githubAuth) {
+  if (err) throw err
+
+  fs.createReadStream('cache/candidates.ndjson').pipe(split2(JSON.parse)).pipe(new Writable({
     objectMode: true,
     write (pkg, enc, next) {
       count++
-      const project = new Project(pkg)
+      const project = new Project(pkg, { githubAuth })
 
       if (ignore.has(project.name)) {
         ignored++
@@ -57,7 +64,7 @@ process.stdin
       project.hydrateDownloadCount((err) => {
         if (err) console.error(project.title, err.message)
 
-        if (project.downloadCount < 1000) {
+        if (project.downloadCount < 200) {
           unpopular++
           return next()
         }
@@ -107,9 +114,28 @@ process.stdin
       console.log('## Data\n')
       console.log(table(rows, { pad: false }))
 
-      callback()
+      const full = projects.map(function (project) {
+        const { name, version, type, language, downloadCount } = project
+        const napi = project.hasNapi()
+        const platforms = project.platforms()
+        const prebuilds = project.prebuilds.map(({ file, ...rest }) => rest)
+
+        return {
+          name,
+          version,
+          type,
+          napi,
+          prebuilds,
+          language,
+          downloadCount,
+          platforms
+        }
+      })
+
+      fs.writeFile('data.json', JSON.stringify(full, null, 2), callback)
     }
   }))
+})
 
 function npmLink (name) {
   const url = `https://npmjs.com/package/${name}`

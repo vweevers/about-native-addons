@@ -12,6 +12,7 @@
     "approximate-number": "~2.0.0",
     "cross-spawn": "~7.0.1",
     "get-npm-tarball-url": "~2.0.1",
+    "ghauth": "~4.0.0",
     "ghreleases": "~3.0.2",
     "global-symbols": "github:vweevers/global-symbols",
     "gunzip-maybe": "~1.4.1",

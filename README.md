@@ -4,7 +4,7 @@
 
 ## Data
 
-_Packages with less than 1000 downloads in the past 30 days are excluded. Last updated: 2019-11-01 (5868 raw, 25 ignored, 1101 uncertain, 4432 unpopular, 310 included)._
+_Also available as [`data.json`](data.json). Packages with less than 200 downloads in the past 30 days are excluded. Last updated: 2019-11-01 (5868 raw, 25 ignored, 1101 uncertain, 4171 unpopular, 571 included)._
 
 | Name | Ver. | Type | Preb. | NAPI | Lang | D/L | Platforms |
 | ---- | ---- | ---- | ----- | ---- | ---- | --- | --------- |
@@ -54,7 +54,7 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 | [`@ampretia/x509`](https://npmjs.com/package/@ampretia/x509) | 0.4.0 |  | 0 |  |  | 74k |  |
 | [`ffi`](https://npmjs.com/package/ffi) | 2.3.0 |  | 0 |  |  | 71k |  |
 | [`contextify`](https://npmjs.com/package/contextify) | 1.0.0 |  | 0 |  |  | 70k |  |
-| [`node-pty-prebuilt-multiarch`](https://npmjs.com/package/node-pty-prebuilt-multiarch) | 0.9.0 | `prebuild-install` | 0 |  |  | 69k |  |
+| [`node-pty-prebuilt-multiarch`](https://npmjs.com/package/node-pty-prebuilt-multiarch) | 0.9.0 | `prebuild-install` | 172 |  |  | 69k | linux-arm<br>linux-arm64.armv8<br>linux-ia32<br>linux-x64<br>linux-arm.musl<br>linux-arm64.musl.armv8<br>linux-x64.musl<br>darwin-x64<br>win32-ia32<br>win32-x64 |
 | [`node-opus`](https://npmjs.com/package/node-opus) | 0.3.3 |  | 0 |  |  | 68k | linux<br>darwin<br>win32<br>freebsd<br>android |
 | [`oniguruma`](https://npmjs.com/package/oniguruma) | 7.2.0 |  | 0 |  |  | 64k |  |
 | [`ursa`](https://npmjs.com/package/ursa) | 0.9.4 |  | 0 |  |  | 62k |  |
@@ -76,7 +76,7 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 | [`grpc-tools`](https://npmjs.com/package/grpc-tools) | 1.8.0 | `node-pre-gyp` | 0 |  |  | 44k |  |
 | [`nsfw`](https://npmjs.com/package/nsfw) | 1.2.5 |  | 0 |  |  | 42k |  |
 | [`memwatch-next`](https://npmjs.com/package/memwatch-next) | 0.3.0 |  | 0 |  |  | 42k |  |
-| [`node-hid`](https://npmjs.com/package/node-hid) | 0.7.9 | `prebuild-install` | 0 |  |  | 41k |  |
+| [`node-hid`](https://npmjs.com/package/node-hid) | 0.7.9 | `prebuild-install` | 57 |  |  | 41k | darwin-x64<br>linux-x64<br>win32-x64 |
 | [`netlinkwrapper`](https://npmjs.com/package/netlinkwrapper) | 1.1.2 |  | 0 |  |  | 40k |  |
 | [`gcstats.js`](https://npmjs.com/package/gcstats.js) | 1.0.0 |  | 0 |  |  | 40k |  |
 | [`pkcs11js`](https://npmjs.com/package/pkcs11js) | 1.0.19 |  | 0 |  |  | 40k |  |
@@ -175,7 +175,7 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 | [`ext2fs`](https://npmjs.com/package/ext2fs) | 1.0.30 | `prebuild-install` | 18 |  |  | 5.8k | darwin-x64<br>linux-x64<br>win32-x64 |
 | [`pty.js`](https://npmjs.com/package/pty.js) | 0.3.1 |  | 0 |  |  | 5.8k |  |
 | [`frida`](https://npmjs.com/package/frida) | 12.7.16 | `prebuild-install` | 0 |  |  | 5.8k |  |
-| [`../node-pty-prebuilt`](https://npmjs.com/package/@pfitzseb/node-pty-prebuilt) | 0.8.1-prebuilt3 | `prebuild-install` | 0 |  |  | 5.8k |  |
+| [`../node-pty-prebuilt`](https://npmjs.com/package/@pfitzseb/node-pty-prebuilt) | 0.8.1-prebuilt3 | `prebuild-install` | 13 |  |  | 5.8k | darwin-x64<br>linux-ia32<br>linux-x64<br>win32-ia32<br>win32-x64 |
 | [`uriparser`](https://npmjs.com/package/uriparser) | 2.2.1 |  | 0 |  |  | 5.7k |  |
 | [`mariasql`](https://npmjs.com/package/mariasql) | 0.2.6 |  | 0 |  |  | 5.7k |  |
 | [`is-valid-window`](https://npmjs.com/package/is-valid-window) | 0.0.5 |  | 0 |  |  | 5.7k |  |
@@ -318,6 +318,267 @@ _Packages with less than 1000 downloads in the past 30 days are excluded. Last u
 | [`durable`](https://npmjs.com/package/durable) | 2.0.16 |  | 0 |  |  | 1k |  |
 | [`tree-sitter-javascript`](https://npmjs.com/package/tree-sitter-javascript) | 0.15.1 |  | 0 |  |  | 1k |  |
 | [`@saleae/ffi`](https://npmjs.com/package/@saleae/ffi) | 3.0.2 |  | 0 |  |  | 1k |  |
+| [`bcoin-native`](https://npmjs.com/package/bcoin-native) | 0.0.23 |  | 0 |  |  | 992 |  |
+| [`int64-napi`](https://npmjs.com/package/int64-napi) | 1.0.1 |  | 0 |  |  | 988 |  |
+| [`spi-device`](https://npmjs.com/package/spi-device) | 3.0.0 |  | 0 |  |  | 980 |  |
+| [`zeromq-ng`](https://npmjs.com/package/zeromq-ng) | 5.0.0-beta.27 | `node-gyp-build@4` | 14 | Yes |  | 968 | darwin-x64<br>linux-arm.glibc<br>linux-arm64.glibc<br>linux-x64.glibc<br>linux-x64.musl<br>win32-ia32<br>win32-x64 |
+| [`tree-sitter-typescript`](https://npmjs.com/package/tree-sitter-typescript) | 0.15.1 |  | 0 |  |  | 967 |  |
+| [`murmurhash3`](https://npmjs.com/package/murmurhash3) | 0.4.3 |  | 0 |  |  | 964 |  |
+| [`node-ios-device`](https://npmjs.com/package/node-ios-device) | 2.0.1 | `node-gyp-build@4` | 4 | Yes |  | 945 | darwin-ia32<br>darwin-x64 |
+| [`zeromq-stable`](https://npmjs.com/package/zeromq-stable) | 5.2.1 | `prebuild-install` | 76 |  |  | 940 | darwin-x64<br>linux-armv7.armv7<br>linux-armv8.armv8<br>linux-x64 |
+| [`ccap`](https://npmjs.com/package/ccap) | 0.6.10 |  | 0 |  |  | 923 |  |
+| [`shmmap`](https://npmjs.com/package/shmmap) | 1.0.0 |  | 0 |  |  | 921 |  |
+| [`snowboy`](https://npmjs.com/package/snowboy) | 1.3.1 | `node-pre-gyp` | 0 |  |  | 917 |  |
+| [`extension-fs`](https://npmjs.com/package/extension-fs) | 6.0.1 |  | 0 | Yes |  | 906 |  |
+| [`reset-date-cache`](https://npmjs.com/package/reset-date-cache) | 1.0.4 |  | 0 |  |  | 881 |  |
+| [`@expo/ursa`](https://npmjs.com/package/@expo/ursa) | 0.9.5 |  | 0 |  |  | 858 |  |
+| [`memwatch`](https://npmjs.com/package/memwatch) | 0.2.2 |  | 0 |  |  | 856 |  |
+| [`shacrypt`](https://npmjs.com/package/shacrypt) | 0.1.3 |  | 0 |  |  | 852 |  |
+| [`../node-runtime-stats`](https://npmjs.com/package/@pm2/node-runtime-stats) | 0.3.2 | `prebuild-install` | 16 |  |  | 835 | linux-x64 |
+| [`node-gd`](https://npmjs.com/package/node-gd) | 1.6.0 |  | 0 |  |  | 812 | !win32 |
+| [`robot-js`](https://npmjs.com/package/robot-js) | 2.0.0 |  | 0 |  |  | 807 | linux<br>darwin<br>win32 |
+| [`tree-sitter-python`](https://npmjs.com/package/tree-sitter-python) | 0.15.0 |  | 0 |  |  | 793 |  |
+| [`memwatch-ng`](https://npmjs.com/package/memwatch-ng) | 1.2.0 |  | 0 |  |  | 789 |  |
+| [`hashset-cpp`](https://npmjs.com/package/hashset-cpp) | 2.2.1 |  | 0 |  |  | 768 |  |
+| [`librsvg-prebuilt`](https://npmjs.com/package/librsvg-prebuilt) | 0.7.10 | `node-pre-gyp` | 0 |  |  | 765 |  |
+| [`bloom-filter-cpp`](https://npmjs.com/package/bloom-filter-cpp) | 1.2.2 |  | 0 |  |  | 765 |  |
+| [`instauuid`](https://npmjs.com/package/instauuid) | 1.0.4 |  | 0 |  |  | 750 |  |
+| [`tree-sitter-bash`](https://npmjs.com/package/tree-sitter-bash) | 0.16.0 | `prebuild-install` | 76 |  |  | 749 | darwin-x64<br>linux-x64<br>win32-ia32<br>win32-x64 |
+| [`curve25519-n`](https://npmjs.com/package/curve25519-n) | 1.5.0 |  | 0 |  |  | 737 |  |
+| [`dawg-cache`](https://npmjs.com/package/dawg-cache) | 0.5.0 | `node-pre-gyp` | 0 |  |  | 729 |  |
+| [`ctags`](https://npmjs.com/package/ctags) | 3.0.0 |  | 0 |  |  | 728 |  |
+| [`fonttools-linux`](https://npmjs.com/package/fonttools-linux) | 1.0.8 |  | 0 |  |  | 721 |  |
+| [`node-levenshtein`](https://npmjs.com/package/node-levenshtein) | 2.0.13 | `node-gyp-build@4` | 6 | Yes |  | 719 | darwin-x64<br>linux-x64<br>win32-x64 |
+| [`marker-index`](https://npmjs.com/package/marker-index) | 4.0.1 |  | 0 |  |  | 715 |  |
+| [`opencv4nodejs-prebuilt`](https://npmjs.com/package/opencv4nodejs-prebuilt) | 5.3.0 | `prebuild-install` | 12 |  |  | 709 | darwin-x64<br>linux-x64<br>win32-x64 |
+| [`64`](https://npmjs.com/package/64) | 0.2.0 | `prebuild-install` | 0 |  |  | 708 |  |
+| [`python.node`](https://npmjs.com/package/python.node) | 1.0.4 |  | 0 |  |  | 690 |  |
+| [`highwayhash`](https://npmjs.com/package/highwayhash) | 2.5.0 | `prebuild-install` | 34 |  |  | 682 | darwin-x64<br>linux-x64<br>win32-x64<br>linux-x64.musl |
+| [`node-snap7`](https://npmjs.com/package/node-snap7) | 1.0.3 | `prebuild-install` | 52 |  |  | 681 | darwin-x64<br>linux-x64<br>win32-ia32<br>win32-x64 |
+| [`spawn-as-admin`](https://npmjs.com/package/spawn-as-admin) | 0.1.3 |  | 0 |  |  | 674 |  |
+| [`ptyw.js`](https://npmjs.com/package/ptyw.js) | 0.4.1 |  | 0 |  |  | 659 |  |
+| [`ac-syslogh`](https://npmjs.com/package/ac-syslogh) | 1.2.4 |  | 0 |  |  | 657 | !win32 |
+| [`traceview-bindings`](https://npmjs.com/package/traceview-bindings) | 1.0.11 |  | 0 |  |  | 656 |  |
+| [`pg-query-native-latest`](https://npmjs.com/package/pg-query-native-latest) | 1.1.0 |  | 0 |  |  | 654 |  |
+| [`tree-sitter-c`](https://npmjs.com/package/tree-sitter-c) | 0.15.2 |  | 0 |  |  | 654 |  |
+| [`insomnia-node-libcurl`](https://npmjs.com/package/insomnia-node-libcurl) | 2.0.0-alpha.0-1 | `node-pre-gyp` | 0 |  |  | 652 |  |
+| [`@atom/nsfw`](https://npmjs.com/package/@atom/nsfw) | 1.0.25 |  | 0 |  |  | 648 |  |
+| [`mmap.js`](https://npmjs.com/package/mmap.js) | 1.0.3 |  | 0 |  |  | 641 |  |
+| [`web-images`](https://npmjs.com/package/web-images) | 0.0.21 |  | 0 |  |  | 636 |  |
+| [`mkfifo`](https://npmjs.com/package/mkfifo) | 2.0.1 |  | 0 | Yes |  | 629 | linux<br>freebsd<br>darwin |
+| [`scrollbar-style`](https://npmjs.com/package/scrollbar-style) | 3.2.0 |  | 0 |  |  | 628 |  |
+| [`blake2`](https://npmjs.com/package/blake2) | 4.0.0 |  | 0 |  |  | 627 |  |
+| [`tree-sitter-ruby`](https://npmjs.com/package/tree-sitter-ruby) | 0.15.2 | `prebuild-install` | 20 |  |  | 619 | darwin-x64<br>linux-x64<br>win32-ia32<br>win32-x64 |
+| [`@nornagon/cld`](https://npmjs.com/package/@nornagon/cld) | 2.4.9 |  | 0 |  |  | 614 |  |
+| [`gcore`](https://npmjs.com/package/gcore) | 0.0.3 |  | 0 |  |  | 605 |  |
+| [`ibapi`](https://npmjs.com/package/ibapi) | 2.6.2 |  | 0 |  |  | 605 |  |
+| [`child_pty`](https://npmjs.com/package/child_pty) | 3.0.10 |  | 0 |  |  | 604 |  |
+| [`shorter`](https://npmjs.com/package/shorter) | 0.3.1 |  | 0 |  |  | 601 |  |
+| [`mmap-object`](https://npmjs.com/package/mmap-object) | 1.4.1 | `node-pre-gyp` | 0 |  |  | 597 |  |
+| [`@fadioit/canapi`](https://npmjs.com/package/@fadioit/canapi) | 2.1.0 |  | 0 | Yes |  | 597 |  |
+| [`speech-recorder`](https://npmjs.com/package/speech-recorder) | 1.0.3 |  | 0 |  |  | 597 |  |
+| [`register-scheme`](https://npmjs.com/package/register-scheme) | 0.0.2 |  | 0 | Yes |  | 596 |  |
+| [`electron-media-service`](https://npmjs.com/package/electron-media-service) | 0.2.2 |  | 0 |  |  | 586 |  |
+| [`../windows.foundation`](https://npmjs.com/package/@nodert-win10/windows.foundation) | 0.2.96 |  | 0 |  |  | 586 | win32 |
+| [`tree-sitter-cpp`](https://npmjs.com/package/tree-sitter-cpp) | 0.15.0 |  | 0 |  |  | 585 |  |
+| [`font-scanner`](https://npmjs.com/package/font-scanner) | 0.1.1 |  | 0 |  |  | 583 |  |
+| [`amo-tools-suite`](https://npmjs.com/package/amo-tools-suite) | 0.5.1 |  | 0 |  |  | 575 |  |
+| [`krb5`](https://npmjs.com/package/krb5) | 0.5.3 |  | 0 | Yes |  | 575 |  |
+| [`turtlecoin-crypto`](https://npmjs.com/package/turtlecoin-crypto) | 3.0.5 |  | 0 |  |  | 561 |  |
+| [`ofe`](https://npmjs.com/package/ofe) | 0.5.1 |  | 0 |  |  | 558 |  |
+| [`ad-block`](https://npmjs.com/package/ad-block) | 4.1.7 |  | 0 |  |  | 557 |  |
+| [`mouse-forward-back`](https://npmjs.com/package/mouse-forward-back) | 1.0.1 |  | 0 |  |  | 556 | linux |
+| [`firebird`](https://npmjs.com/package/firebird) | 0.1.4 |  | 0 |  |  | 554 |  |
+| [`setflags`](https://npmjs.com/package/setflags) | 0.0.2 |  | 0 |  |  | 553 |  |
+| [`../windows.storage.streams`](https://npmjs.com/package/@nodert-win10/windows.storage.streams) | 0.2.96 |  | 0 |  |  | 551 | win32 |
+| [`tree-sitter-rust`](https://npmjs.com/package/tree-sitter-rust) | 0.15.1 |  | 0 |  |  | 551 |  |
+| [`win-sso`](https://npmjs.com/package/win-sso) | 0.3.1 | `node-gyp-build@4` | 4 | Yes |  | 551 | win32-ia32<br>win32-x64 |
+| [`rpi-ws281x-native`](https://npmjs.com/package/rpi-ws281x-native) | 0.9.0 |  | 0 |  |  | 547 |  |
+| [`win-version-info`](https://npmjs.com/package/win-version-info) | 3.0.1 | `prebuild-install` | 14 |  |  | 545 | win32-ia32<br>win32-x64 |
+| [`../windows.media.playback`](https://npmjs.com/package/@nodert-win10/windows.media.playback) | 0.2.96 |  | 0 |  |  | 544 | win32 |
+| [`../windows.media`](https://npmjs.com/package/@nodert-win10/windows.media) | 0.2.96 |  | 0 |  |  | 543 | win32 |
+| [`ced`](https://npmjs.com/package/ced) | 1.0.0 |  | 0 |  |  | 542 |  |
+| [`tree-sitter-go`](https://npmjs.com/package/tree-sitter-go) | 0.15.0 |  | 0 |  |  | 541 |  |
+| [`gc-watch`](https://npmjs.com/package/gc-watch) | 0.1.1 |  | 0 |  |  | 539 |  |
+| [`node-postal`](https://npmjs.com/package/node-postal) | 1.0.0 |  | 0 |  |  | 537 |  |
+| [`dumpme`](https://npmjs.com/package/dumpme) | 1.0.2 |  | 0 |  |  | 533 |  |
+| [`node-crc`](https://npmjs.com/package/node-crc) | 1.2.2 |  | 0 |  |  | 533 |  |
+| [`node-zstd`](https://npmjs.com/package/node-zstd) | 2.0.1 |  | 0 |  |  | 530 |  |
+| [`protobuf`](https://npmjs.com/package/protobuf) | 0.11.1 |  | 0 |  |  | 519 |  |
+| [`pulsar-client`](https://npmjs.com/package/pulsar-client) | 1.0.0 | `node-pre-gyp` | 0 | Yes |  | 519 |  |
+| [`udev`](https://npmjs.com/package/udev) | 0.6.0 | `node-pre-gyp` | 0 |  |  | 517 | linux |
+| [`ed25519-hap`](https://npmjs.com/package/ed25519-hap) | 0.0.5 |  | 0 |  |  | 516 |  |
+| [`face-recognition`](https://npmjs.com/package/face-recognition) | 0.9.4 |  | 0 |  |  | 507 |  |
+| [`node-vad`](https://npmjs.com/package/node-vad) | 1.1.4 |  | 0 |  |  | 504 |  |
+| [`netroute`](https://npmjs.com/package/netroute) | 1.0.2 |  | 0 |  |  | 503 |  |
+| [`tree-sitter-html`](https://npmjs.com/package/tree-sitter-html) | 0.15.0 |  | 0 |  |  | 503 |  |
+| [`ckmeans`](https://npmjs.com/package/ckmeans) | 1.0.1 |  | 0 | Yes |  | 502 |  |
+| [`node-minizip`](https://npmjs.com/package/node-minizip) | 0.3.0 |  | 0 |  |  | 499 |  |
+| [`@carto/mapnik`](https://npmjs.com/package/@carto/mapnik) | 3.6.2-carto.16 | `node-pre-gyp` | 0 |  |  | 499 |  |
+| [`ll-keyboard-hook-win`](https://npmjs.com/package/ll-keyboard-hook-win) | 3.0.0 |  | 0 |  |  | 497 | win32 |
+| [`timekit`](https://npmjs.com/package/timekit) | 1.0.3 |  | 0 |  |  | 495 |  |
+| [`tree-sitter-jsdoc`](https://npmjs.com/package/tree-sitter-jsdoc) | 0.15.0 |  | 0 |  |  | 494 |  |
+| [`tree-sitter-regex`](https://npmjs.com/package/tree-sitter-regex) | 0.15.0 |  | 0 |  |  | 491 |  |
+| [`tree-sitter-embedded-template`](https://npmjs.com/package/tree-sitter-embedded-template) | 0.15.0 |  | 0 |  |  | 487 |  |
+| [`../node-memwatch`](https://npmjs.com/package/@dmfenton/node-memwatch) | 1.0.0 |  | 0 |  |  | 486 |  |
+| [`lodepng`](https://npmjs.com/package/lodepng) | 1.2.0 |  | 0 |  |  | 486 |  |
+| [`../node-memwatch`](https://npmjs.com/package/@aidemaster/node-memwatch) | 1.0.5 |  | 0 |  |  | 485 |  |
+| [`winreglib`](https://npmjs.com/package/winreglib) | 1.0.5 | `node-gyp-build@4` | 4 | Yes |  | 483 | win32-ia32<br>win32-x64 |
+| [`dblogger`](https://npmjs.com/package/dblogger) | 0.7.2 |  | 0 |  |  | 480 |  |
+| [`node-tspsolver`](https://npmjs.com/package/node-tspsolver) | 1.0.2 |  | 0 |  |  | 479 |  |
+| [`tree-sitter-css`](https://npmjs.com/package/tree-sitter-css) | 0.13.7 |  | 0 |  |  | 478 |  |
+| [`flow-parser-bin`](https://npmjs.com/package/flow-parser-bin) | 0.111.0 |  | 0 |  |  | 473 | darwin<br>linux |
+| [`../bunyan-syslog`](https://npmjs.com/package/@sportsbet/bunyan-syslog) | 0.3.2 |  | 0 |  |  | 472 |  |
+| [`node-sass-vendor`](https://npmjs.com/package/node-sass-vendor) | 4.9.5 |  | 0 |  |  | 468 |  |
+| [`fuse-bindings`](https://npmjs.com/package/fuse-bindings) | 2.11.2 | `node-gyp-build@3` | 13 |  |  | 466 | linux-x64 |
+| [`@atom/fuzzy-native`](https://npmjs.com/package/@atom/fuzzy-native) | 1.1.0 |  | 0 |  |  | 466 |  |
+| [`tree-sitter-json`](https://npmjs.com/package/tree-sitter-json) | 0.14.0 |  | 0 |  |  | 459 |  |
+| [`htmlstrip-native`](https://npmjs.com/package/htmlstrip-native) | 0.3.0 |  | 0 |  |  | 453 |  |
+| [`espresso-logic-minimizer`](https://npmjs.com/package/espresso-logic-minimizer) | 2.0.3 |  | 0 |  |  | 452 |  |
+| [`@mapbox/vtvalidate`](https://npmjs.com/package/@mapbox/vtvalidate) | 0.2.3 | `node-pre-gyp` | 0 |  |  | 449 |  |
+| [`../recrypt-node-binding`](https://npmjs.com/package/@ironcorelabs/recrypt-node-binding) | 0.6.1 | `node-pre-gyp` | 0 |  |  | 448 | darwin<br>linux |
+| [`boost-geospatial-index`](https://npmjs.com/package/boost-geospatial-index) | 1.0.5 |  | 0 |  |  | 441 |  |
+| [`gphoto2`](https://npmjs.com/package/gphoto2) | 0.3.0 |  | 0 |  |  | 440 | darwin<br>linux |
+| [`toobusy`](https://npmjs.com/package/toobusy) | 0.2.4 |  | 0 |  |  | 440 |  |
+| [`pajk-lwip`](https://npmjs.com/package/pajk-lwip) | 0.2.0 |  | 0 |  |  | 439 |  |
+| [`fast-text`](https://npmjs.com/package/fast-text) | 1.0.0-alpha.2 |  | 0 |  |  | 436 |  |
+| [`naudiodon`](https://npmjs.com/package/naudiodon) | 2.1.0 |  | 0 | Yes |  | 436 |  |
+| [`v8tools`](https://npmjs.com/package/v8tools) | 0.2.2 |  | 0 |  |  | 435 |  |
+| [`@radarlabs/s2`](https://npmjs.com/package/@radarlabs/s2) | 0.0.2 |  | 0 | Yes |  | 433 |  |
+| [`engage-engine`](https://npmjs.com/package/engage-engine) | 1.89.88450001 |  | 0 |  |  | 433 |  |
+| [`termios`](https://npmjs.com/package/termios) | 0.1.8 |  | 0 |  |  | 432 |  |
+| [`fast-feed`](https://npmjs.com/package/fast-feed) | 1.7.0 |  | 0 |  |  | 431 |  |
+| [`pwuid`](https://npmjs.com/package/pwuid) | 1.1.1 |  | 0 |  |  | 429 | !win32 |
+| [`unbound`](https://npmjs.com/package/unbound) | 0.3.5 |  | 0 |  |  | 429 |  |
+| [`../lexactivator`](https://npmjs.com/package/@cryptlex/lexactivator) | 3.4.0 |  | 0 | Yes |  | 428 |  |
+| [`@abandonware/i2c`](https://npmjs.com/package/@abandonware/i2c) | 0.2.4-0 |  | 0 |  |  | 424 |  |
+| [`node-mbus`](https://npmjs.com/package/node-mbus) | 1.0.1 |  | 0 |  |  | 412 |  |
+| [`pc-nrfjprog-js`](https://npmjs.com/package/pc-nrfjprog-js) | 1.5.9 | `node-pre-gyp` | 0 |  |  | 411 |  |
+| [`pi-spi`](https://npmjs.com/package/pi-spi) | 1.2.1 |  | 0 |  |  | 410 |  |
+| [`mhash`](https://npmjs.com/package/mhash) | 2.2.0 |  | 0 |  |  | 410 |  |
+| [`../windows-fsstat`](https://npmjs.com/package/@gyselroth/windows-fsstat) | 0.0.7 |  | 0 |  |  | 406 | win32 |
+| [`node-svm`](https://npmjs.com/package/node-svm) | 2.1.9 |  | 0 |  |  | 399 |  |
+| [`rclnodejs`](https://npmjs.com/package/rclnodejs) | 0.10.2 |  | 0 |  |  | 398 |  |
+| [`ejdb`](https://npmjs.com/package/ejdb) | 1.2.12-44 | `node-pre-gyp` | 0 |  |  | 395 | linux<br>darwin<br>sunos<br>win32 |
+| [`taglib`](https://npmjs.com/package/taglib) | 0.8.1 |  | 0 |  |  | 388 |  |
+| [`node-mbed-dtls`](https://npmjs.com/package/node-mbed-dtls) | 2.6.1 |  | 0 |  |  | 383 |  |
+| [`mber-rust`](https://npmjs.com/package/mber-rust) | 0.1.9 | `neon` | 0 |  | rust | 377 |  |
+| [`abp-filter-parser-cpp`](https://npmjs.com/package/abp-filter-parser-cpp) | 1.2.13 |  | 0 |  |  | 375 |  |
+| [`node-rar`](https://npmjs.com/package/node-rar) | 0.0.2 |  | 0 |  |  | 368 |  |
+| [`safari-push-notifications`](https://npmjs.com/package/safari-push-notifications) | 0.4.0 |  | 0 |  |  | 368 |  |
+| [`tree-sitter-elm`](https://npmjs.com/package/tree-sitter-elm) | 2.7.2 | `prebuild-install` | 80 |  |  | 367 | darwin-x64<br>linux-x64<br>win32-ia32<br>win32-x64 |
+| [`ms-flakeless`](https://npmjs.com/package/ms-flakeless) | 4.3.0 |  | 0 |  |  | 365 |  |
+| [`@tfoxy/ttf2woff2`](https://npmjs.com/package/@tfoxy/ttf2woff2) | 3.0.1 |  | 0 |  |  | 364 |  |
+| [`lru-native`](https://npmjs.com/package/lru-native) | 0.4.0 |  | 0 |  |  | 364 |  |
+| [`../spellchecker`](https://npmjs.com/package/@nornagon/spellchecker) | 4.0.7 |  | 0 |  |  | 364 |  |
+| [`mmap-object-prebuilt`](https://npmjs.com/package/mmap-object-prebuilt) | 1.4.3 | `node-pre-gyp` | 0 |  |  | 364 |  |
+| [`patched-git-utils`](https://npmjs.com/package/patched-git-utils) | 4.0.8 |  | 0 |  |  | 363 |  |
+| [`tree-sitter-vplus`](https://npmjs.com/package/tree-sitter-vplus) | 1.0.1 |  | 0 |  |  | 361 |  |
+| [`cld-sync`](https://npmjs.com/package/cld-sync) | 1.0.0 |  | 0 |  |  | 360 |  |
+| [`xgboost`](https://npmjs.com/package/xgboost) | 1.1.0 |  | 0 |  |  | 357 |  |
+| [`node-rar-updated`](https://npmjs.com/package/node-rar-updated) | 0.0.1 |  | 0 |  |  | 357 |  |
+| [`node-ffi`](https://npmjs.com/package/node-ffi) | 0.5.7 |  | 0 |  |  | 356 |  |
+| [`sspi-client`](https://npmjs.com/package/sspi-client) | 0.1.0 |  | 0 |  |  | 355 |  |
+| [`int64-native`](https://npmjs.com/package/int64-native) | 0.5.0 |  | 0 |  |  | 355 |  |
+| [`@voltraco/taglib`](https://npmjs.com/package/@voltraco/taglib) | 0.8.2 |  | 0 |  |  | 353 |  |
+| [`bsdiff-nodejs`](https://npmjs.com/package/bsdiff-nodejs) | 2.1.0 | `node-pre-gyp` | 0 |  |  | 353 |  |
+| [`blake2js`](https://npmjs.com/package/blake2js) | 1.0.0 |  | 0 |  |  | 351 |  |
+| [`fasttext`](https://npmjs.com/package/fasttext) | 1.0.0 | `node-pre-gyp` | 0 | Yes |  | 351 |  |
+| [`nabtoapi-win`](https://npmjs.com/package/nabtoapi-win) | 1.8.2 |  | 0 |  |  | 345 |  |
+| [`../system-idle-time`](https://npmjs.com/package/@paulcbetts/system-idle-time) | 1.0.5 |  | 0 |  |  | 339 |  |
+| [`aes-ccm`](https://npmjs.com/package/aes-ccm) | 1.0.5 | `node-pre-gyp` | 0 |  |  | 338 |  |
+| [`xpc-connect`](https://npmjs.com/package/xpc-connect) | 2.0.0 |  | 0 |  |  | 338 | darwin |
+| [`swc`](https://npmjs.com/package/swc) | 1.0.10 | `neon` | 0 |  | rust | 332 |  |
+| [`libjpeg`](https://npmjs.com/package/libjpeg) | 3.0.0 | `node-pre-gyp` | 0 |  |  | 330 |  |
+| [`libvirt`](https://npmjs.com/package/libvirt) | 1.2.1 |  | 0 |  |  | 329 |  |
+| [`poppler-simple`](https://npmjs.com/package/poppler-simple) | 0.7.0 |  | 0 |  |  | 328 |  |
+| [`node-aes-gcm`](https://npmjs.com/package/node-aes-gcm) | 0.2.4 |  | 0 |  |  | 327 |  |
+| [`spellchecker-prebuild`](https://npmjs.com/package/spellchecker-prebuild) | 3.7.0 | `prebuild-install` | 29 |  |  | 327 | darwin-x64<br>linux-x64<br>win32-ia32<br>win32-x64 |
+| [`node-priority`](https://npmjs.com/package/node-priority) | 0.1.5 |  | 0 |  |  | 324 |  |
+| [`minisqlite`](https://npmjs.com/package/minisqlite) | 2.1.1 | `node-pre-gyp` | 0 |  |  | 320 |  |
+| [`@mapbox/vtcomposite`](https://npmjs.com/package/@mapbox/vtcomposite) | 0.2.1 | `node-pre-gyp` | 0 | Yes |  | 319 |  |
+| [`srand`](https://npmjs.com/package/srand) | 1.1.5 |  | 0 |  |  | 317 |  |
+| [`node-stringbuilder`](https://npmjs.com/package/node-stringbuilder) | 2.2.4 |  | 0 |  |  | 313 |  |
+| [`grpc-uds`](https://npmjs.com/package/grpc-uds) | 0.1.4 |  | 0 |  |  | 313 |  |
+| [`geoip-plus`](https://npmjs.com/package/geoip-plus) | 0.0.7 |  | 0 |  |  | 310 |  |
+| [`resin-crc-utils`](https://npmjs.com/package/resin-crc-utils) | 1.0.3 |  | 0 |  |  | 307 |  |
+| [`cctz`](https://npmjs.com/package/cctz) | 1.7.7 |  | 0 |  |  | 306 |  |
+| [`bkjs-wand`](https://npmjs.com/package/bkjs-wand) | 0.5.1 |  | 0 |  |  | 304 |  |
+| [`xz`](https://npmjs.com/package/xz) | 2.0.2 |  | 0 | Yes |  | 301 |  |
+| [`cached-run-in-this-context`](https://npmjs.com/package/cached-run-in-this-context) | 0.5.0 |  | 0 |  |  | 298 |  |
+| [`clipboard-data`](https://npmjs.com/package/clipboard-data) | 0.0.3-beta.7 | `prebuild-install` | 34 |  |  | 298 | darwin-x64<br>linux-ia32<br>linux-x64<br>win32-ia32<br>win32-x64 |
+| [`turbo-net`](https://npmjs.com/package/turbo-net) | 1.4.0 | `node-gyp-build@3` | 5 | Yes |  | 297 | darwin-x64<br>linux-ia32<br>linux-x64<br>win32-ia32<br>win32-x64 |
+| [`ptt-dll`](https://npmjs.com/package/ptt-dll) | 1.1.2 |  | 0 |  |  | 296 |  |
+| [`rcswitch`](https://npmjs.com/package/rcswitch) | 0.3.1 |  | 0 |  |  | 294 |  |
+| [`array-gpio`](https://npmjs.com/package/array-gpio) | 1.3.8 |  | 0 |  |  | 294 | linux |
+| [`osmium`](https://npmjs.com/package/osmium) | 0.5.7 | `node-pre-gyp` | 0 |  |  | 290 |  |
+| [`dv`](https://npmjs.com/package/dv) | 2.1.0 |  | 0 |  |  | 288 |  |
+| [`jit.js`](https://npmjs.com/package/jit.js) | 1.18.2 |  | 0 |  |  | 283 |  |
+| [`../cls-aoa-algorithm`](https://npmjs.com/package/@corelink/cls-aoa-algorithm) | 0.2.13 | `node-gyp-build@4` | 0 | Yes |  | 281 |  |
+| [`robotjs-node10`](https://npmjs.com/package/robotjs-node10) | 0.5.4 | `prebuild-install` | 8 |  |  | 279 | darwin-x64<br>linux-x64<br>win32-ia32<br>win32-x64 |
+| [`ems`](https://npmjs.com/package/ems) | 1.5.5 |  | 0 |  |  | 279 |  |
+| [`shared-memory-disruptor`](https://npmjs.com/package/shared-memory-disruptor) | 3.0.0 |  | 0 | Yes |  | 279 |  |
+| [`devguard-carrier`](https://npmjs.com/package/devguard-carrier) | 0.11.8 | `node-pre-gyp` | 0 |  |  | 279 |  |
+| [`darknet`](https://npmjs.com/package/darknet) | 2.0.17 |  | 0 | Yes |  | 277 |  |
+| [`rconsole`](https://npmjs.com/package/rconsole) | 0.3.0 |  | 0 |  |  | 275 |  |
+| [`node-btree`](https://npmjs.com/package/node-btree) | 0.4.0 | `node-pre-gyp` | 0 |  |  | 274 | !win32 |
+| [`../windows.devices.geolocation`](https://npmjs.com/package/@nodert-win10-rs3/windows.devices.geolocation) | 0.4.0 |  | 0 |  |  | 263 |  |
+| [`word2vector`](https://npmjs.com/package/word2vector) | 2.2.1 |  | 0 |  |  | 262 |  |
+| [`eigenjs`](https://npmjs.com/package/eigenjs) | 0.0.89 |  | 0 |  |  | 260 |  |
+| [`qminer`](https://npmjs.com/package/qminer) | 9.2.4 | `node-pre-gyp` | 0 |  |  | 260 |  |
+| [`base128`](https://npmjs.com/package/base128) | 0.2.1 |  | 0 |  |  | 257 |  |
+| [`llnode`](https://npmjs.com/package/llnode) | 2.2.0 |  | 0 | Yes |  | 256 |  |
+| [`nroonga`](https://npmjs.com/package/nroonga) | 0.4.1 |  | 0 |  |  | 256 |  |
+| [`mapbox-gl-native`](https://npmjs.com/package/mapbox-gl-native) | 3.4.2 | `node-pre-gyp` | 0 |  |  | 254 |  |
+| [`../jabra-node-sdk`](https://npmjs.com/package/@gnaudio/jabra-node-sdk) | 2.0.0-beta.6 |  | 0 | Yes |  | 254 |  |
+| [`bitprim-native`](https://npmjs.com/package/bitprim-native) | 0.0.123 | `node-pre-gyp` | 0 |  |  | 252 |  |
+| [`nodetime-native`](https://npmjs.com/package/nodetime-native) | 0.1.0 |  | 0 |  |  | 251 |  |
+| [`../node-rdkafka`](https://npmjs.com/package/@worksight/node-rdkafka) | 2.7.1 |  | 0 |  |  | 249 |  |
+| [`mfont`](https://npmjs.com/package/mfont) | 0.0.9 |  | 0 | Yes |  | 249 |  |
+| [`dvbtee`](https://npmjs.com/package/dvbtee) | 0.4.4 |  | 0 |  |  | 247 |  |
+| [`tree-sitter-gdscript`](https://npmjs.com/package/tree-sitter-gdscript) | 0.2.5 | `prebuild-install` | 60 |  |  | 246 | darwin-x64<br>win32-ia32<br>win32-x64 |
+| [`gamepad`](https://npmjs.com/package/gamepad) | 1.6.0 | `prebuild-install` | 0 |  |  | 242 |  |
+| [`tree-sitter-biber`](https://npmjs.com/package/tree-sitter-biber) | 0.6.3 | `prebuild-install` | 84 |  |  | 240 | darwin-x64<br>linux-x64<br>win32-ia32<br>win32-x64 |
+| [`@pake/node-printer`](https://npmjs.com/package/@pake/node-printer) | 0.5.4 | `prebuild-install` | 0 |  |  | 237 |  |
+| [`shm-typed-array`](https://npmjs.com/package/shm-typed-array) | 0.0.12 |  | 0 |  |  | 234 | !win32 |
+| [`hzeller-matrix`](https://npmjs.com/package/hzeller-matrix) | 1.0.85 |  | 0 |  |  | 232 |  |
+| [`phplike`](https://npmjs.com/package/phplike) | 2.5.10 |  | 0 |  |  | 231 | linux<br>mac<br>darwin<br>win<br>win32<br>win64 |
+| [`unlisten`](https://npmjs.com/package/unlisten) | 1.0.0 |  | 0 |  |  | 230 | linux |
+| [`electron-panel-window`](https://npmjs.com/package/electron-panel-window) | 2.0.0-1 |  | 0 |  |  | 230 |  |
+| [`monitr`](https://npmjs.com/package/monitr) | 1.2.0 |  | 0 |  |  | 229 | linux |
+| [`minipg`](https://npmjs.com/package/minipg) | 0.4.2 |  | 0 |  |  | 229 |  |
+| [`swisseph`](https://npmjs.com/package/swisseph) | 0.5.13 |  | 0 |  |  | 226 |  |
+| [`lightning-spell`](https://npmjs.com/package/lightning-spell) | 0.1.0 |  | 0 | Yes |  | 226 |  |
+| [`getdents`](https://npmjs.com/package/getdents) | 1.0.5 |  | 0 | Yes |  | 225 | linux |
+| [`child-process-thread`](https://npmjs.com/package/child-process-thread) | 0.0.69 |  | 0 |  |  | 225 |  |
+| [`hdt`](https://npmjs.com/package/hdt) | 2.2.1 |  | 0 |  |  | 223 |  |
+| [`cmark-gfm`](https://npmjs.com/package/cmark-gfm) | 0.6.0 |  | 0 | Yes |  | 223 |  |
+| [`leveldown-hyper`](https://npmjs.com/package/leveldown-hyper) | 2.0.0 | `prebuild-install` | 0 |  |  | 219 |  |
+| [`@julusian/jpeg-turbo`](https://npmjs.com/package/@julusian/jpeg-turbo) | 0.5.2 | `prebuild-install` | 57 |  |  | 218 | darwin-x64<br>linux-x64<br>win32-x64 |
+| [`electron-java`](https://npmjs.com/package/electron-java) | 1.0.2 |  | 0 |  |  | 218 |  |
+| [`nodeimu`](https://npmjs.com/package/nodeimu) | 2.1.9 |  | 0 |  |  | 216 |  |
+| [`ssh`](https://npmjs.com/package/ssh) | 1.8.0 |  | 0 |  |  | 216 |  |
+| [`../windows-notification-state`](https://npmjs.com/package/@aabuhijleh/windows-notification-state) | 1.3.4 |  | 0 |  |  | 216 |  |
+| [`cpp-hexgenerator`](https://npmjs.com/package/cpp-hexgenerator) | 1.1.0 |  | 0 | Yes |  | 215 |  |
+| [`andon-bluetooth-lescan-temp`](https://npmjs.com/package/andon-bluetooth-lescan-temp) | 1.1.40 |  | 0 |  |  | 213 | linux<br>android<br>win32 |
+| [`macadam`](https://npmjs.com/package/macadam) | 2.0.9 |  | 0 |  |  | 213 |  |
+| [`tcl`](https://npmjs.com/package/tcl) | 2.4.0 |  | 0 |  |  | 210 |  |
+| [`tree-sitter-lua`](https://npmjs.com/package/tree-sitter-lua) | 1.6.0 | `prebuild-install` | 35 |  |  | 210 | win32-x64<br>darwin-x64<br>linux-x64<br>win32-ia32 |
+| [`edonctp`](https://npmjs.com/package/edonctp) | 0.3.2 |  | 0 |  |  | 209 |  |
+| [`lentil-macos-additions`](https://npmjs.com/package/lentil-macos-additions) | 1.2.8 |  | 0 |  |  | 209 |  |
+| [`socketwatcher`](https://npmjs.com/package/socketwatcher) | 0.3.0 |  | 0 |  |  | 208 |  |
+| [`../noble-mac`](https://npmjs.com/package/@s524797336/noble-mac) | 0.1.2 |  | 0 | Yes |  | 208 |  |
+| [`btim`](https://npmjs.com/package/btim) | 1.0.2 |  | 0 |  |  | 207 |  |
+| [`bridjs`](https://npmjs.com/package/bridjs) | 0.5.8 |  | 0 |  |  | 207 |  |
+| [`kinect2`](https://npmjs.com/package/kinect2) | 0.1.7 | `node-pre-gyp` | 0 |  |  | 207 | win32 |
+| [`adblock-rs`](https://npmjs.com/package/adblock-rs) | 0.1.35 | `neon` | 0 |  | rust | 207 |  |
+| [`active-windows`](https://npmjs.com/package/active-windows) | 0.1.5 |  | 0 | Yes |  | 206 |  |
+| [`linux-device`](https://npmjs.com/package/linux-device) | 2.0.16 |  | 0 |  |  | 204 |  |
+| [`node-uname`](https://npmjs.com/package/node-uname) | 3.0.2 |  | 0 |  |  | 204 |  |
+| [`libtidy`](https://npmjs.com/package/libtidy) | 0.3.7 | `node-pre-gyp` | 0 |  |  | 203 |  |
+| [`@zwodder/win-certs`](https://npmjs.com/package/@zwodder/win-certs) | 1.0.4 |  | 0 | Yes |  | 201 |  |
+| [`lcryptowrap`](https://npmjs.com/package/lcryptowrap) | 1.1.8 |  | 0 |  |  | 201 |  |
+| [`heap.js`](https://npmjs.com/package/heap.js) | 1.0.0 |  | 0 |  |  | 200 |  |
 
 ### Running
 
@@ -330,7 +591,7 @@ mkdir cache
 # Collect packages from npm (takes 90 minutes or so)
 node bin/collect-npm-data > cache/candidates.ndjson
 
-cat cache/candidates.ndjson | node bin/process-npm-data
+node bin/process-npm-data
 ```
 
 ## Overlapping Symbols
