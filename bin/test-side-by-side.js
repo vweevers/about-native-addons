@@ -6,26 +6,33 @@ const testPairs = require('../lib/test-pairs')
 const promisify = require('util').promisify
 const runTests = promisify(require('../lib/run-tests'))
 const createProject = promisify(require('../lib/project').from)
+const argv = require('minimist')(process.argv.slice(2), {
+  boolean: ['npm', 'dlopen', 'now']
+})
 
 ;(async function () {
-  // Should introduce minimist here
-  const argv = process.argv.slice(2)
-  const fromNpm = argv[0] === '--npm'
-
-  if (fromNpm) argv.shift()
-
-  const projects = await Promise.all(argv.map(spec => {
+  const projects = await Promise.all(argv._.map(spec => {
     return createProject(spec)
   }))
 
   if (projects.length < 2) {
-    console.error('usage: test-side-by-side <a> <b>')
+    console.error('usage: test-side-by-side <a> <b> [c]')
     process.exit(1)
   }
 
   const testMatrix = await testPairs(projects, async function (a, b) {
-    console.error('Test %s with injected %s', a.title, b.title)
-    return runTests(a.pkg, { inject: b.pkg, fromNpm })
+    if (argv.dlopen) {
+      console.error('Test dlopen %s and %s', a.title, b.title)
+    } else {
+      console.error('Test %s with injected %s', a.title, b.title)
+    }
+
+    return runTests(a.pkg, {
+      inject: b.pkg,
+      fromNpm: argv.npm,
+      dlopen: argv.dlopen,
+      now: argv.now
+    })
   })
 
   console.log(table(testMatrix))
