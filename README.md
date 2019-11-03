@@ -597,7 +597,7 @@ node bin/process-npm-data
 
 ## Overlapping Symbols
 
-This section is about finding addons affected by overlapping global symbols on mac (and some unixes reportedly). When an addon has global symbols it can conflict with other addons (or other versions) loaded into the same process, leading to addons calling into each other and bugs that are hard to debug (and discover).
+This section is about **1)** finding addons affected by overlapping global symbols on mac (and some unixes reportedly). When an addon has global symbols it can conflict with other addons (or other versions) loaded into the same process, leading to addons calling into each other and bugs that are hard to debug (and discover).
 
 This issue can be fixed by compiling the addon with `-fvisibility=hidden`. See [nodejs/node-gyp#1891](https://github.com/nodejs/node-gyp/pull/1891). Add the following condition to your `binding.gyp`:
 
@@ -616,6 +616,8 @@ This issue can be fixed by compiling the addon with `-fvisibility=hidden`. See [
   }]
 }
 ```
+
+And about **2)** conflicts of shared libraries, when two versions of an addon are loaded into the same process.
 
 ### Overview (2019-10-27)
 
@@ -674,7 +676,7 @@ This is the result of running tests (usually `npm t`) of a project, after having
 3. The names of those symbols overlap with the other addon
 4. Those overlapping symbols don't point to similar code.
 
-#### 2019-11-03
+#### 2019-11-03: `sharp`
 
 Generated with node 8.16.2 on mac:
 
@@ -703,11 +705,12 @@ node bin/test-side-by-side \
 | `sharp@0.22.1`         | 11  | OK | OK  | OK  | OK  | OK  | OK  | OK  | OK  | OK  | OK  | ERR | -   | ERR |
 | `sharp@0.21.3`         | 12  | OK  | OK  | OK  | OK  | OK  | OK  | OK  | OK  | OK  | OK  | ERR | ERR | -   |
 
-The `sharp` errors appear to be related to a shared library (`libvips`) rather than symbols of the addon itself. This can be reproduced with node 8 on Mac as well as Windows:
+The `sharp` errors appear to be related to a shared library (`libvips`). This can be reproduced with node 8 on Mac as well as Windows:
 
 ```
 node bin/test-side-by-side \
-  sharp@0.23.2 sharp@0.23.1 sharp@0.23.0 sharp@0.22.1
+  sharp@0.23.2 sharp@0.23.1 \
+  sharp@0.23.0 sharp@0.22.1
 ```
 
 |          | `0.23.2` | `0.23.1` | `0.23.0` | `0.22.1` |
@@ -717,7 +720,27 @@ node bin/test-side-by-side \
 | `0.23.0` | OK       | OK       | -        | ERR      |
 | `0.22.1` | ERR      | ERR      | ERR      | -        |
 
-#### 2019-10-27
+#### 2019-11-03: `sodium-native`
+
+Reproduction of [sodium-friends/sodium-native#93](https://github.com/sodium-friends/sodium-native/issues/93).
+
+With node 8 on Ubuntu 18.04 and Windows (Mac doesn't have the issue) using prebuilt binaries (there's no issue when compiled from source):
+
+```
+node bin/test-side-by-side --npm \
+  sodium-native@2.4.6 sodium-native@2.4.2 \
+  sodium-native@2.3.0 sodium-native@2.2.5
+```
+
+|         | `2.4.6` | `2.4.2` | `2.3.0` | `2.2.6` | `2.2.5` |
+| --------| ------- | ------- | ------- | ------- | ------- |
+| `2.4.6` | -       | OK      | OK      | ERR     | ERR     |
+| `2.4.2` | OK      | -       | OK      | ERR     | ERR     |
+| `2.3.0` | OK      | OK      | -       | ERR     | ERR     |
+| `2.2.6` | OK      | OK      | OK      | -       | OK      |
+| `2.2.5` | OK      | OK      | OK      | OK      | -       |
+
+#### 2019-10-27: `leveldown` and `rocksdb`
 
 _This data was generated with node 12 on mac, by tooling that has since been removed from this repo._
 
