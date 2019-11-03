@@ -1,5 +1,8 @@
 'use strict'
 
+console.error('Not supported')
+process.exit(1)
+
 const globalSymbols = require('global-symbols')
 const semver = require('semver')
 const promisify = require('util').promisify

@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 'use strict'
 
+console.error('Not supported')
+process.exit(1)
+
 const table = require('markdown-table')
 const semver = require('semver')
 const resolve = require('resolve')
