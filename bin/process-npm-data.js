@@ -111,8 +111,21 @@ ghauth({
         'Platforms'
       ])
 
-      console.log('## Data\n')
-      console.log(table(rows, { pad: false }))
+      let markdown = '# Data\n\n'
+
+      const date = new Date().toISOString().split('T')[0]
+      const stats = `${count} raw, ${ignored} ignored, ${uncertain} uncertain, ${unpopular} unpopular, ${projects.length} included`
+
+      markdown += [
+        '_Also available as [`data.json`](data.json).',
+        'Packages with less than 200 downloads in the past 30 days are excluded.',
+        `Last updated: ${date} (${stats})._`
+      ].join(' ')
+
+      markdown += '\n\n'
+      markdown += table(rows, { pad: false })
+
+      fs.writeFileSync('data.md', markdown)
 
       const full = projects.map(function (project) {
         const { name, version, type, language, downloadCount } = project
