@@ -43,7 +43,8 @@ const projects = []
 ghauth({
   configName: 'about-native-modules',
   note: 'For about-native-modules',
-  userAgent: 'about-native-modules'
+  userAgent: 'about-native-modules',
+  noDeviceFlow: true
 }, function (err, githubAuth) {
   if (err) throw err
 
