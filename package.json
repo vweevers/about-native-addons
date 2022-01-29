@@ -27,7 +27,7 @@
     "sanitize-filename": "^1.6.3",
     "semver": "^7.3.5",
     "simple-get": "^4.0.1",
-    "split2": "^3.1.1",
+    "split2": "^4.1.0",
     "tar-fs": "^2.0.0",
     "thunky-with-args": "^1.0.0",
     "unzipper": "^0.10.5"
