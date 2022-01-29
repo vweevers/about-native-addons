@@ -52,6 +52,18 @@ get.concat({ url: 'https://replicate.npmjs.com/', json: true }, function (err, r
 })
 
 function maybeNative (pkg) {
+  if (pkg.gypfile) {
+    return true
+  }
+
+  if (pkg.scripts) {
+    if (/node-gyp (re)?build/.test(pkg.scripts.install)) {
+      return true
+    } else if (/node-gyp (re)?build/.test(pkg.scripts.preinstall)) {
+      return true
+    }
+  }
+
   for (const dep of commonDeps) {
     if (dependsOn(pkg, dep)) {
       return true
