@@ -1,45 +1,55 @@
 #!/usr/bin/env node
 'use strict'
 
-// Note to self: last seq was 3568977
-
+const get = require('simple-get')
+const packageStream = require('package-stream')
 const commonDeps = require('../lib/common-deps')
-const registry = require('package-stream')({
-  // Update sequence to start from. If the script fails halfway, use the last
-  // logged seq to continue where it left off.
-  since: 0
-})
 
-// From https://replicate.npmjs.com/ (2019-11-01)
-const docCount = 1117787
+get.concat({ url: 'https://replicate.npmjs.com/', json: true }, function (err, res, data) {
+  if (err) throw err
 
-let count = 0
-let matches = 0
+  const total = data.doc_count
 
-registry
-  .on('package', ondata)
-  .on('up-to-date', done)
-
-function ondata (pkg, seq) {
-  count++
-
-  const progress = ((count / docCount) * 100).toFixed(3)
-  console.error(`${count} (${progress}%) m:${matches} seq:${seq}`)
-
-  try {
-    if (maybeNative(pkg)) {
-      console.log(JSON.stringify(pkg))
-      matches++
-    }
-  } catch (err) {
-    console.error(err)
+  if (!Number.isInteger(total)) {
+    console.error(data)
+    console.error('Expected a doc_count number')
+    process.exit(1)
   }
-}
 
-function done () {
-  console.error('done')
-  process.exit()
-}
+  const registry = packageStream({
+    // Update sequence to start from. If the script fails halfway, use the last
+    // logged seq to continue where it left off.
+    since: 0
+  })
+
+  let count = 0
+  let matches = 0
+
+  registry
+    .on('package', ondata)
+    .on('up-to-date', done)
+
+  function ondata (pkg, seq) {
+    count++
+
+    const progress = ((count / total) * 100).toFixed(3)
+    console.error(`${count} (${progress}%) m:${matches} seq:${seq}`)
+
+    try {
+      if (maybeNative(pkg)) {
+        console.log(JSON.stringify(pkg))
+        matches++
+      }
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  function done () {
+    console.error('done')
+    process.exit()
+  }
+})
 
 function maybeNative (pkg) {
   for (const dep of commonDeps) {
