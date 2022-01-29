@@ -6,7 +6,7 @@
   "author": "Vincent Weevers",
   "license": "MIT",
   "scripts": {
-    "test": "standard"
+    "test": "standard && depcheck"
   },
   "dependencies": {
     "approximate-number": "~2.0.0",
@@ -23,11 +23,8 @@
     "package-stream": "~3.1.0",
     "packument": "~1.0.0",
     "packument-package": "~1.0.0",
-    "pe-coff": "~1.0.0",
     "readable-stream": "~3.4.0",
     "request": "~2.88.0",
-    "resolve": "~1.12.0",
-    "rimraf": "~3.0.0",
     "sanitize-filename": "~1.6.3",
     "semver": "~6.3.0",
     "simple-get": "~3.1.0",
@@ -37,27 +34,8 @@
     "unzipper": "~0.10.5"
   },
   "devDependencies": {
+    "depcheck": "^1.4.3",
     "standard": "^14.3.1"
-  },
-  "symbolTestDependencies": {
-    "bufferutil": "4.0.1",
-    "couchbase": "2.6.8",
-    "event-loop-delay": "1.0.0",
-    "farmhash": "3.0.0",
-    "fd-lock": "1.0.2",
-    "keytar": "5.0.0-beta.3",
-    "leveldown.5.0.2": "npm:leveldown@5.0.2",
-    "leveldown.5.4.0": "npm:leveldown@5.4.0",
-    "leveldown.5.4.1": "npm:leveldown@5.4.1",
-    "lzo-decompress": "0.1.2",
-    "microtime": "3.0.0",
-    "rocksdb": "4.1.0",
-    "sharp": "0.23.1",
-    "sodium-native": "2.4.6",
-    "tree-sitter": "0.15.10",
-    "utf-8-validate": "5.0.2",
-    "utp-native": "2.1.4",
-    "zeromq": "5.1.1"
   },
   "keywords": [
     "native",
