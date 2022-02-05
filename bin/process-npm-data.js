@@ -111,7 +111,7 @@ ghauth({
           version,
           type === 'hand-rolled' ? type : type ? '`' + type + '`' : '',
           prebuilds.length,
-          project.hasNapi() ? 'Yes' : '',
+          project.hasNodeAPI() ? 'Yes' : '',
           project.language || '',
           approx(project.downloadCount),
           project.platforms().join('<br>')
@@ -123,7 +123,7 @@ ghauth({
         'Ver.',
         'Type',
         'Preb.',
-        'NAPI',
+        'Node-API',
         'Lang',
         'D/L',
         'Platforms'
@@ -146,7 +146,7 @@ ghauth({
 
       const full = projects.map(function (project) {
         const { name, version, type, language, downloadCount } = project
-        const napi = project.hasNapi()
+        const nodeAPI = project.hasNodeAPI()
         const platforms = project.platforms()
         const prebuilds = project.prebuilds.map(({ file, ...rest }) => rest)
 
@@ -154,7 +154,7 @@ ghauth({
           name,
           version,
           type,
-          napi,
+          nodeAPI,
           prebuilds,
           language,
           downloadCount,
