@@ -2,13 +2,23 @@
 'use strict'
 
 const split2 = require('split2')
-const { Writable } = require('readable-stream')
+const { Writable, pipeline } = require('readable-stream')
 const table = require('markdown-table')
 const approx = require('approximate-number')
 const ghauth = require('ghauth')
+const MultiStream = require('multistream')
 const fs = require('fs')
+const path = require('path')
 const Project = require('../lib/project')
 const commonDeps = require('../lib/common-deps')
+
+const dataDir = process.argv[2]
+const date = process.argv[3] || new Date().toISOString().split('T')[0]
+
+if (!dataDir || isNaN(new Date(date))) {
+  console.error('Usage: node bin/process-npm-data <dir> [date]')
+  process.exit(1)
+}
 
 const ignore = new Set([
   'no-one-left-behind',
@@ -48,11 +58,18 @@ ghauth({
 }, function (err, githubAuth) {
   if (err) throw err
 
-  fs.createReadStream('cache/candidates.ndjson').pipe(split2(JSON.parse)).pipe(new Writable({
+  readData(dataDir).pipe(new Writable({
     objectMode: true,
     write (pkg, enc, next) {
       count++
       const project = new Project(pkg, { githubAuth })
+
+      if (count % 1000 === 0) {
+        console.error(
+          'Progress: %d total, %d ignored, %d uncertain, %d unpopular, %d included',
+          count, ignored, uncertain, unpopular, projects.length
+        )
+      }
 
       if (ignore.has(project.name)) {
         ignored++
@@ -80,7 +97,7 @@ ghauth({
     },
     final (callback) {
       console.error(
-        'done (%d raw, %d ignored, %d uncertain, %d unpopular, %d included)',
+        'Done: %d total, %d ignored, %d uncertain, %d unpopular, %d included',
         count, ignored, uncertain, unpopular, projects.length
       )
 
@@ -114,8 +131,7 @@ ghauth({
 
       let markdown = '# Data\n\n'
 
-      const date = new Date().toISOString().split('T')[0]
-      const stats = `${count} raw, ${ignored} ignored, ${uncertain} uncertain, ${unpopular} unpopular, ${projects.length} included`
+      const stats = `${count} total, ${ignored} ignored, ${uncertain} uncertain, ${unpopular} unpopular, ${projects.length} included`
 
       markdown += [
         '_Also available as [`data.json`](data.json).',
@@ -150,6 +166,20 @@ ghauth({
     }
   }))
 })
+
+function readData (dir) {
+  const streams = fs.readdirSync(dir).filter(isNDJSON).map(file => () => {
+    file = path.join(dir, file)
+    console.error('Reading: %s', file)
+    return pipeline(fs.createReadStream(file), split2(JSON.parse))
+  })
+
+  return MultiStream.obj(streams)
+}
+
+function isNDJSON (file) {
+  return file.endsWith('.ndjson')
+}
 
 function npmLink (name) {
   const url = `https://npmjs.com/package/${name}`

@@ -5,6 +5,13 @@ const get = require('simple-get')
 const packageStream = require('package-stream')
 const commonDeps = require('../lib/common-deps')
 
+const since = parseInt(process.argv[2] || 0, 10)
+
+if (!Number.isInteger(since) || since < 0) {
+  console.error('Usage: node bin/collect-npm-data [since]')
+  process.exit(1)
+}
+
 get.concat({ url: 'https://replicate.npmjs.com/', json: true }, function (err, res, data) {
   if (err) throw err
 
@@ -16,10 +23,17 @@ get.concat({ url: 'https://replicate.npmjs.com/', json: true }, function (err, r
     process.exit(1)
   }
 
+  console.error('doc_count: %d, update_seq: %d', data.doc_count, data.update_seq)
+
+  if (data.update_seq <= since) {
+    console.error('No updates, exiting.')
+    return
+  }
+
   const registry = packageStream({
     // Update sequence to start from. If the script fails halfway, use the last
     // logged seq to continue where it left off.
-    since: 0
+    since
   })
 
   let count = 0
