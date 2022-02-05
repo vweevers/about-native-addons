@@ -37,3 +37,7 @@ node bin/process-npm-data cache/deduped
 ```
 
 The dedupe step will read `cache/raw/*.ndjson` which means it'll include `raw-01.ndjson` and `raw-02.ndjson`.
+
+## License
+
+[MIT](LICENSE)
