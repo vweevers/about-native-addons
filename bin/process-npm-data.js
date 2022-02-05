@@ -74,9 +74,6 @@ ghauth({
       if (ignore.has(project.name)) {
         ignored++
         return next()
-      } else if (!project.hydrateType()) {
-        uncertain++
-        return next()
       }
 
       project.hydrateDownloadCount((err) => {
@@ -84,6 +81,11 @@ ghauth({
 
         if (project.downloadCount < 200) {
           unpopular++
+          return next()
+        }
+
+        if (!project.hydrateType()) {
+          uncertain++
           return next()
         }
 
