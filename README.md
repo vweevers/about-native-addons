@@ -1,6 +1,6 @@
-# about-native-modules
+# about-native-addons
 
-**Collecting data on npm packages with Node.js native addons.**
+**Collects data on all Node.js native addons found in the npm registry.**
 
 ## Data
 

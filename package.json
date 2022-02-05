@@ -1,7 +1,7 @@
 {
-  "name": "about-native-modules",
+  "name": "about-native-addons",
   "version": "0.0.0",
-  "description": "Collecting data on npm packages with Node.js native addons",
+  "description": "Collects data on all Node.js native addons found in the npm registry",
   "private": true,
   "author": "Vincent Weevers",
   "license": "MIT",
@@ -37,6 +37,8 @@
     "depcheck": "^1.4.3",
     "standard": "^16.0.4"
   },
+  "repository": "vweevers/about-native-addons",
+  "homepage": "https://github.com/vweevers/about-native-addons",
   "keywords": [
     "native",
     "prebuild",
