@@ -3,7 +3,7 @@
 
 const get = require('simple-get')
 const packageStream = require('package-stream')
-const commonDeps = require('../lib/common-deps')
+const commonDeps = require('../lib/data/common-deps')
 
 const since = parseInt(process.argv[2] || 0, 10)
 
@@ -65,6 +65,7 @@ get.concat({ url: 'https://replicate.npmjs.com/', json: true }, function (err, r
   }
 })
 
+// TODO: add other patterns, see project.js
 function maybeNative (pkg) {
   if (pkg.gypfile) {
     return true

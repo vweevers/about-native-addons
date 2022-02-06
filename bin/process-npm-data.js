@@ -10,7 +10,8 @@ const MultiStream = require('multistream')
 const fs = require('fs')
 const path = require('path')
 const Project = require('../lib/project')
-const commonDeps = require('../lib/common-deps')
+const commonDeps = require('../lib/data/common-deps')
+const ignoreDeps = require('../lib/data/ignore')
 
 const dataDir = process.argv[2]
 const date = process.argv[3] || new Date().toISOString().split('T')[0]
@@ -20,28 +21,7 @@ if (!dataDir || isNaN(new Date(date))) {
   process.exit(1)
 }
 
-const ignore = new Set([
-  'no-one-left-behind',
-  'a-native-module',
-  'a-native-module-without-prebuild',
-  'require-rebuild',
-  '@s524797336/require-rebuild',
-  '@eugeneware/rocksdb',
-  'ssss-nodewrap',
-  'wc-starterkit',
-  'sabers',
-  'ocpp-js',
-  'rockmsvc',
-  'wedmaster',
-  'customer-service',
-  '@paulcbetts/electron-rxdb',
-  'iohook-prebuild-test',
-  'pivot-authentication-service',
-  'sdk-billtobill',
-  'sdkn-billtobill',
-  'sdk-snr',
-  'rue-mist'
-].concat(commonDeps))
+const ignore = new Set(ignoreDeps.concat(commonDeps))
 
 let count = 0
 let ignored = 0
@@ -49,6 +29,7 @@ let uncertain = 0
 let unpopular = 0
 
 const projects = []
+const minimumDownloads = 150
 
 ghauth({
   configName: 'about-native-modules',
@@ -66,12 +47,12 @@ ghauth({
 
       if (count % 1000 === 0) {
         console.error(
-          'Progress: %d total, %d ignored, %d uncertain, %d unpopular, %d included',
+          'Progress: %d candidates, %d ignored, %d uncertain, %d unpopular, %d included',
           count, ignored, uncertain, unpopular, projects.length
         )
       }
 
-      if (ignore.has(project.name)) {
+      if (ignore.has(project.name) || pkg.deprecated) {
         ignored++
         return next()
       }
@@ -79,7 +60,7 @@ ghauth({
       project.hydrateDownloadCount((err) => {
         if (err) console.error(project.title, err.message)
 
-        if (project.downloadCount < 200) {
+        if (project.downloadCount < minimumDownloads) {
           unpopular++
           return next()
         }
@@ -99,50 +80,68 @@ ghauth({
     },
     final (callback) {
       console.error(
-        'Done: %d total, %d ignored, %d uncertain, %d unpopular, %d included',
+        'Done: %d candidates, %d ignored, %d uncertain, %d unpopular, %d included',
         count, ignored, uncertain, unpopular, projects.length
       )
 
       projects.sort((a, b) => b.downloadCount - a.downloadCount)
 
+      const typeCounts = {}
+      const typeDownloads = {}
+      let nodeApiCount = 0
+
       const rows = projects.map(function (project) {
-        const { name, version, type, prebuilds } = project
+        const { name, type, prebuilds } = project
+        const hasNodeAPI = project.hasNodeAPI()
+        const t = type.startsWith('node-gyp-build@') ? 'node-gyp-build' : type
+
+        typeCounts[t] = (typeCounts[t] || 0) + 1
+        typeDownloads[t] = (typeDownloads[t] || 0) + project.downloadCount
+
+        if (hasNodeAPI) nodeApiCount++
 
         return [
           npmLink(name),
-          version,
-          type === 'hand-rolled' ? type : type ? '`' + type + '`' : '',
+          type === 'custom' ? type : type ? '`' + type + '`' : '',
           prebuilds.length,
-          project.hasNodeAPI() ? 'Yes' : '',
-          project.language || '',
+          hasNodeAPI ? 'Yes' : '',
           approx(project.downloadCount),
           project.platforms().join('<br>')
         ]
       })
 
       rows.unshift([
-        'Name',
-        'Ver.',
+        'Package',
         'Type',
         'Preb.',
         'Node-API',
-        'Lang',
         'D/L',
         'Platforms'
       ])
 
       let markdown = '# Data\n\n'
 
-      const stats = `${count} total, ${ignored} ignored, ${uncertain} uncertain, ${unpopular} unpopular, ${projects.length} included`
+      const stats = `${count} candidates, ${ignored} ignored, ${uncertain} uncertain, ${unpopular} unpopular, ${projects.length} included`
+      const percent = (count) => ((count / projects.length) * 100).toFixed(1) + '%'
 
       markdown += [
         '_Also available as [`data.json`](data.json).',
-        'Packages with less than 200 downloads in the past 30 days are excluded.',
+        `Packages with less than ${minimumDownloads} downloads in the past 30 days (the D/L column) are excluded.`,
         `Last updated: ${date} (${stats})._`
       ].join(' ')
 
       markdown += '\n\n'
-      markdown += table(rows, { pad: false })
+      markdown += `Of these ${projects.length} packages, at least ${nodeApiCount} (${percent(nodeApiCount)}) use Node-API. As for prebuilt binaries and install scripts:\n\n`
+
+      for (const type of Object.keys(typeCounts).sort((a, b) => typeCounts[b] - typeCounts[a])) {
+        const count = typeCounts[type]
+        const formatted = type === 'custom' ? 'a custom install script' : type === 'node-gyp' ? npmLink(type) + ' implicitly or explicitly, without prebuilt binaries' : npmLink(type)
+        const dl = approx(typeDownloads[type])
+
+        markdown += `- ${count} (${percent(count)}) use ${formatted} (combined downloads: ${dl})\n`
+      }
+
+      markdown += '\n' + table(rows, { pad: false })
 
       fs.writeFileSync('data.md', markdown)
 
@@ -191,7 +190,7 @@ function npmLink (name) {
 
 function shortName (name) {
   if (name.length > 20 && name[0] === '@') {
-    return '../' + name.split('/')[1]
+    return '*/' + name.split('/')[1]
   }
 
   return name
