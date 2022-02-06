@@ -1,6 +1,6 @@
 # Data
 
-_Also available as [`data.json`](data.json). Packages with less than 150 downloads in the past 30 days (the D/L column) are excluded. Last updated: 2022-02-06 (10361 candidates, 412 ignored, 56 uncertain, 8902 unpopular, 991 included)._
+_Also available as [`data.json`](data.json). Packages with less than 150 downloads in the past 30 days (the D/L column) are excluded. Last updated: 2022-02-05 (10361 candidates, 412 ignored, 56 uncertain, 8902 unpopular, 991 included)._
 
 Of these 991 packages, at least 255 (25.7%) use Node-API. As for prebuilt binaries and install scripts:
 
